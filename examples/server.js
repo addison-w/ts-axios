@@ -27,9 +27,13 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 router.get('/simple/get', function (req, res) {
-  res.json({
+  return res.json({
     msg: `hello world`,
   })
+})
+
+router.get('/base/get', function (req, res) {
+  return res.json(req.query)
 })
 
 app.use(router)
